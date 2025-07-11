@@ -282,28 +282,28 @@ def main():
                 out_gtImg_path,
                 nrow=1,
                 normalize=True,
-                range=(-1, 1),
+                value_range=(-1, 1),
             )
             utils.save_image(
                 inputImg,
                 out_inputImg_path,
                 nrow=1,
                 normalize=True,
-                range=(-1, 1),
+                value_range=(-1, 1),
             )
             utils.save_image(
                 sampledImg,
                 out_sampledImg_path,
                 nrow=1,
                 normalize=True,
-                range=(-1, 1),
+                value_range=(-1, 1),
             )
             utils.save_image(
                 outImg,
                 out_outImg_path,
                 nrow=1,
                 normalize=True,
-                range=(-1, 1),
+                value_range=(-1, 1),
             )
             if args.use_cf:
                 utils.save_image(
@@ -311,7 +311,7 @@ def main():
                     out_coarseImg_path,
                     nrow=1,
                     normalize=True,
-                    range=(-1, 1),
+                    value_range=(-1, 1),
                 )
                     
             lpips_value += calculate_lpips(gtImg, outImg)
