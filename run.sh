@@ -4,7 +4,7 @@ MODEL_FLAGS="--num_heads 1 --attention_resolutions 16 --diffusion_steps 1000 --d
 SAMPLE_FLAGS="--timestep_respacing 270 --ddim_stride 5 --range_t 20 --batch_size 5"
 BASIC_CONFIG_FLAGS="--use_inverse_masks False --use_cf True --use_ddim True --special_mask False" 
 INPUT_PATH="--base_samples demo/image --mask_path demo/mask/thick"
-MODEL_PATH="--model_path_64 models/celebahq64_500000.pt --model_path_256 models/celebahq256_500000.pt"
+MODEL_PATH="--model_path_64 models/celebahq64_1000000.pt --model_path_256 models/celebahq256_1000000.pt"
 OUTPUT_PATH="--save_dir results/celebahq/thick"
 
 CUDA_VISIBLE_DEVICES=0 python sample.py $CF_RESAMPLE_FLAGS $BASELINE_RESAMPLE_FLAGS $CLASSIFIER_FLAGS $MODEL_FLAGS $SAMPLE_FLAGS $BASIC_CONFIG_FLAGS $INPUT_PATH $MODEL_PATH $CLASSIFIER_PATH $OUTPUT_PATH
