@@ -108,9 +108,17 @@ def main():
     
     logger.log("creating samples...")
     count = 0
-    all_items = os.listdir(args.base_samples)
-    num_inputs = len(all_items)
+    # all_items = os.listdir(args.base_samples)
+    # num_inputs = len(all_items)
+    all_items = sorted([
+        f for f in os.listdir(args.base_samples)
+        if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp", ".bmp"))
+    ])
     
+    num_inputs = min(100, len(all_items))
+    
+    logger.log(f"Input images found: {len(all_items)}")
+    logger.log(f"Maximum samples to generate: {num_inputs}")
     # metrics init
     metrics_file_path = os.path.join(logger.get_dir(), f"metrics_log.txt")
     lpips_value = 0.
